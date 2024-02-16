@@ -12,7 +12,7 @@ import base64
 # model = VGG16(weights='imagenet')
 # model = Model(inputs=model.inputs, outputs=model.layers[-2].output)
 # model.save('vgg16-feature-extractor.h5')
-model = load_model('vgg16-feature-extractor.h5')
+model = load_model('vgg16-feature-extractor.h5', compile=False)
 
 # extract image features using vgg16
 def extract_features(base64_str):
