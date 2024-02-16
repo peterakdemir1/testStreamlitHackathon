@@ -1,4 +1,11 @@
 import streamlit as st
+import subprocess
+import sys
+
+if "run" not in st.session_state:
+    st.session_state.run = True
+    subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', 'requirements.txt'])
+
 from streamlit_extras.switch_page_button import switch_page
 # from streamlit_extras.let_it_rain import rain
 from st_pages import Page, show_pages, add_page_title
@@ -16,7 +23,7 @@ rain(
 )
 
 
-st.markdown("<h1 style='text-align: center;'>TITLE</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Treasure Snap!</h1>", unsafe_allow_html=True)
 
 st.markdown('''
 Argh Matey! Explore the world to find me hidden treasures.
